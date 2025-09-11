@@ -25,22 +25,22 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
 .  
-.  
+.  No. Although small, the exponent indicates exponential growth as opposed to logarithmic growth.
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
 .  
-.  
+.  Yes. Same reasoning for previous question, but reversed.
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
 .  
-.  
+.  No. The growth of $\sqrt{n}$ is inherently faster than that of any logarithmic function.
 .  
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+.  Yes. Same reasoning for previous question, but reversed.
 
 
 2. **SPARC to Python** (12 pts)
