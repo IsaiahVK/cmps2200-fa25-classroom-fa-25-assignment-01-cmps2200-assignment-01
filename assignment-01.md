@@ -25,7 +25,7 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
 .  
-.  No. Although small, the exponent indicates exponential growth as opposed to logarithmic growth.
+.  No. Although small, the exponent indicates polynomial growth as opposed to logarithmic growth.
 .  
 .  
 
@@ -63,7 +63,7 @@ $$
   - 2b. (6 pts) What does this function do, in your own words?  
 
 .  
-.  
+.  It generates the Fibonacci sequence up to x, returning element x.
 .  
 .  
 .  
@@ -90,10 +90,12 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
  
   - 3a. (7 pts) First, implement an iterative, sequential version of `longest_run` in `main.py`.  
 
+  Implemented
+
   - 3b. (4 pts) What is the Work and Span of this implementation?  
 
-.  
-.  
+.  $W(n) = W(n-1) + O(1)$
+.  $S(n) = S(n-1) + O(1)$
 .  
 .  
 .  
@@ -107,22 +109,22 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
 .  
+.  $W(n) = 2W(n/2) + O(n)$
+.  $2W(n/2)$ represents the division of the step into two parts (n/2) and those two parts (2W)
+.  $O(n)$ represents the slicing of the list.
 .  
 .  
-.  
-.  
-.  
-.  
-.  
-.  
+.  $S(n) = S(n/2) + O(n)$
+.  $S(n/2)$ represents the recursive calls happening at the same time.
+.  $O(n)$ represents the list slicing being performed in sequential.
 .  
 .  
 
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
 
-.  
-.  
+.  Even though the recursive calls are parallelized, the sequential slicing operation is limiting at each step.
+.  Work is $O(nlogn)$ and span is $O(n)$
 .  
 .  
 .  
